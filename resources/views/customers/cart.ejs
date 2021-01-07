@@ -1,0 +1,19 @@
+<br>
+<h1>Orders</h1>
+<br>
+
+<% if(session.cart){ %>
+    <% for (let item of Object.values(session.cart.items)){ %>
+    <li>
+        <h1>Item Name: <%= item.item.name %></h1>
+        <h1>Item Price: <%= item.item.price %></h1>
+        <h2>Quantity: <%= item.qty %></h2>
+        <h2>Total Price: <%= item.item.price * item.qty %></h2>
+    </li>
+    <% } %>
+
+    <br><h2><strong>Total Order Price: <%= session.cart.totalPrice %></strong></h2>
+<% } else { %>
+    <h1>Cart Empty</h1>
+<% } %>
+
