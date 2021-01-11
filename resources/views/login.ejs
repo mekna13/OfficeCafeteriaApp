@@ -1,0 +1,17 @@
+<h1>This is Login Page</h1>
+<div style =" margin: 10% auto; width: 60%; border: 3px solid #73AD21; padding: 30px;">
+    <form action="/login" method="POST">
+        <% if(messages.error){ %> 
+            <span><%= messages.error %> </span>
+        <% } %> 
+        <div>
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email"  placeholder="Email" value="<%= messages.email %> ">
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password"  placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>

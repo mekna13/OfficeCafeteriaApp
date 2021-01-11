@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/app.css">
+    </head>
+    <body>
+        <ol>
+            <li>
+                <a href="#">Menu</a>
+            </li>
+            <% if(user){ %> 
+            <li>
+                <form id="logout" action="/logout" method="POST">
+                    <a onClick="document.getElementById('logout').submit()" href="#">logout</a>
+                </form>
+            
+            </li>
+            <% }else{ %>
+            <li>
+                <a href="/register">Register</a>
+            </li>
+            <li>
+                <a href="/login">Login</a>
+            </li>    
+            <% } %>    
+            <li>
+                <a href="/cart">Cart <span id="cartCounter"></span></a>
+            </li>
+        </ol>
+        
+        
+        
+        
+        <%- body %>
+        <script src="/js/app.js"></script>
+    </body>
+</html>

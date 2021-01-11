@@ -1,0 +1,26 @@
+<h1>This is User Profile Page</h1>
+<% if(user){ %>
+    <h1>USER INFORMATION</h1>
+    <ul>
+        <li>Full Name : <%= user.name %> <%= user.lastname %> </li>
+        <li>Organization: <%= user.orgName %> </li>
+        <li>Employee Id:<%= user.empId %> </li>
+        <li>Mobile No: <%= user.mobileNo %> </li>
+        <li>Email: <%= user.email %> </li>
+        <li style="width: 200px; height: 200px;">
+            <img src="/uploads/<%= user.idImg %> " alt="<%= user.idImg %>">
+        </li>
+        <li style="color: red;">
+            YOUR REG ID: <%= user._id %> 
+        </li>
+        <li style="color: red;">
+            ACCOUNT CREATED AT: <%= user.createdAt %> 
+        </li>
+        
+    </ul>
+
+<% }else { %> 
+
+    Login please
+
+<% } %> 

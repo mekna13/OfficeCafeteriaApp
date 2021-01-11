@@ -1,1 +1,10 @@
 <h1>This is Home Page</h1>
+<% if(user){ %>
+    
+    <h1><%= user.name %> logged in</h1>
+
+<% }else { %> 
+
+    Login please
+
+<% } %> 
