@@ -11,14 +11,22 @@
     <body>
         <ol>
             <li>
-                <a href="#">Menu</a>
+                <a href="/">Menu</a>
             </li>
-            <li>
-                <a href="/register">Register</a>
-            </li>
-            <li>
-                <a href="/login">Login</a>
-            </li>
+            <% if(user) { %>
+                <li>
+                    <form id="logout" action="/logout" method="POST">
+                        <a onclick="document.getElementById('logout').submit()" href="#">Logout</a>
+                    </form>
+                </li>
+            <% } else { %>
+                <li>
+                    <a href="/register">Register</a>
+                </li>
+                <li>
+                    <a href="/login">Login</a>
+                </li>
+            <% } %>
             <li>
                 <a href="/cart">Cart <span id="cartCounter"><%= session.cart ? session.cart.totalQty : '' %></span></a>
             </li>
@@ -28,6 +36,7 @@
         
         
         <%- body %>
+        <script src="/socket.io/socket.io.js"></script>
         <script src="/js/app.js"></script>
     </body>
 </html>

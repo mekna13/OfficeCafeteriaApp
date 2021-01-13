@@ -307,3 +307,11 @@ body {
   background: #fff;
 }
 
+.step-completed {
+  color: gray;
+}
+
+.current {
+  color: red;
+}
+

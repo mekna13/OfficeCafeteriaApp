@@ -1,0 +1,15 @@
+<br>
+<%= order._id %>
+<br>
+
+<h1>Delivery Status</h1>
+<input id="hiddenInput" type="hidden" value="<%= JSON.stringify(order) %>">
+<br>
+<ul>
+    <li class="time_status" data-time="To be set soon.."></li>
+    <br>
+    <li class="status_timeline" data-status="order_placed"><span>Order Placed</span></li>
+    <li class="status_timeline" data-status="confirmed"><span>Waiting for Confirmation</span></li>
+    <li class="status_timeline" data-status="prepared"><span>Preparing</span></li>
+    <li class="status_timeline" data-status="completed"><span>Ready To Be Taken</span></li>
+</ul>

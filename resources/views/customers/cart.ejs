@@ -13,7 +13,17 @@
     <% } %>
 
     <br><h2><strong>Total Order Price: <%= session.cart.totalPrice %></strong></h2>
+    <% if(user) {%>
+    <form action="/orders" method="POST">
+        <button type="submit">Place Order</button>
+    </form>
+    <% } else { %>
+        <a href="/login">Login</a>
+    <% } %>
+
 <% } else { %>
     <h1>Cart Empty</h1>
 <% } %>
+
+
 
