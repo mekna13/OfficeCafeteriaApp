@@ -3,6 +3,7 @@
 <br>
 <li>
     <h1>Item Name: <%= item.name %></h1>
+    <img src="/img/<%= item.itemImage %>" alt="<%= item.itemImage %>">
     <h2>Price: <%= item.price %></h2>
     <button data-item="<%= JSON.stringify(item) %>" class="add-to-cart"><strong>Add</strong></button>
 </li>

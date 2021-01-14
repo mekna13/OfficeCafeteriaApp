@@ -14,6 +14,7 @@ const MongoDbStore = require('connect-mongo')(session)
 const passport = require('passport')
 const Emitter = require('events')
 
+app.use(express.static(__dirname+'/public/'))
 //DB Connection
 const url = 'mongodb+srv://Panda:Ab541112@@cluster0.xketn.mongodb.net/cafe?retryWrites=true&w=majority'
 mongoose.connect(url, { useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true });
@@ -57,7 +58,7 @@ app.use(passport.session())
 app.use(flash())
 
 //Assets
-app.use(express.static('public'))
+//app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 

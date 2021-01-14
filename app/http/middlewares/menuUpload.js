@@ -2,13 +2,13 @@ const multer = require('multer')
 const path = require('path')
 
 const Storage = multer.diskStorage({
-    destination: 'public/uploads',
+    destination: 'public/img',
     filename: ( req , file, cb) => {
         cb(null, file.filename+"_"+Date.now()+path.extname(file.originalname))
     }
 })
 
-const upload = multer({
+const menuUpload = multer({
     storage: Storage,
     fileFilter: function (req, file, callback) {
         var ext = path.extname(file.originalname);
@@ -22,4 +22,4 @@ const upload = multer({
     }
 }).single('file')
 
-module.exports = upload
+module.exports = menuUpload

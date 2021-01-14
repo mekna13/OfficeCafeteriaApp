@@ -9,6 +9,10 @@ const menuSchema = new Schema({
     price : {
         type: Number,
         required: true
+    },
+    itemImage: { 
+        type: String, 
+        required: true 
     }
 });
 

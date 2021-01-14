@@ -1,0 +1,24 @@
+<form action="/admin/menu" method="POST" class="mt-8 space-y-6" enctype="multipart/form-data">
+    <% if(messages.error) { %>
+    <span><%= messages.error %>></span>
+    <% } %>
+      <div class="rounded-md shadow-sm -space-y-px">
+      <div>
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name"  placeholder="Name" value="<%= messages.name %> " required>
+      </div>
+      <div>
+          <label for="price">Price</label>
+          <input type="text" name="price" id="price"  placeholder="price" value="<%= messages.price %>" required>
+      </div>
+      <div>
+        <label for="file">Upload Item Image</label>
+        <input type="file" id="itemImageId" name="file" required>
+      </div>
+  
+      <div>
+        <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Add Item To Menu
+        </button>
+      </div>
+    </form>
