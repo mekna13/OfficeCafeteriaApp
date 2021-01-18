@@ -13,6 +13,10 @@ const menuSchema = new Schema({
     itemImage: { 
         type: String, 
         required: true 
+    },
+    category: {
+        type: String,
+        required: true
     }
 });
 

@@ -1,29 +1,63 @@
 <br>
-<h1>Orders</h1>
-<br>
+<div class="container-sm mt-4">
+    <h1 style="color: #FF7314;">Your Cart</h1>
+    <br>
+    
+    <div class="container cartBox">
 
-<% if(session.cart){ %>
-    <% for (let item of Object.values(session.cart.items)){ %>
-    <li>
-        <h1>Item Name: <%= item.item.name %></h1>
-        <h1>Item Price: <%= item.item.price %></h1>
-        <h2>Quantity: <%= item.qty %></h2>
-        <h2>Total Price: <%= item.item.price * item.qty %></h2>
-    </li>
-    <% } %>
-
-    <br><h2><strong>Total Order Price: <%= session.cart.totalPrice %></strong></h2>
-    <% if(user) {%>
-    <form action="/orders" method="POST">
-        <button type="submit">Place Order</button>
-    </form>
-    <% } else { %>
-        <a href="/login">Login</a>
-    <% } %>
-
-<% } else { %>
-    <h1>Cart Empty</h1>
-<% } %>
-
-
-
+        <% if(session.cart){ %>
+            
+        <div class="row">
+            <div class="col"><h3>Item Name</h3></div>
+            <div class="col"><h3>Price</h3></div>
+            <div class="col"><h3>Quantity</h3></div>
+            <div class="col"><h3>Total Price</h3> </div>
+        </div>
+               
+        <% for (let item of Object.values(session.cart.items)){ %>
+            <div class="itemBox">
+                <div class="row">
+                    <div class="col" style="font-family: 'Palanquin Dark', sans-serif;"><%= item.item.name %></div>
+                        <div class="col"><%= item.item.price %></div>
+                        <div class="col"><%= item.qty %></div>
+                        <div class="col"><%= item.item.price * item.qty %></div>
+                    </div>
+                </div>
+        <% } %>
+        <div class="row mt-2">
+            <div class="col-md">
+                <div class="itemBox">
+                    <h3><strong>Total Order Price:</strong></h3>
+                    <h2>Rs <%= session.cart.totalPrice %></h2>
+                </div>
+            </div>
+            <% if(user) {%>
+                <div class="col-md">
+                    <div class="itemBoxOrange">
+                            <form action="/orders" method="POST">
+                                <button type="submit" class="placeOrderBtn">Place Order</button>
+                            </form>    
+                    </div>
+                </div>
+            <% } else { %>
+                    <div class="col-md">
+                        <div class="itemBox">
+                          
+                                <h2 style="text-align: center;">To purchase please <br></h2>
+                                <h3 style="text-align: center;">
+                                    <a href="/login">login</a> or 
+                                    <a href="/register">register</a>
+                                </h3>
+                            
+                        </div>
+                    </div>
+            <% } %>
+        </div>
+        
+        <% } else { %>
+            <br><br>
+            <h1>Cart Empty</h1>
+        <% } %>
+        
+    </div>
+</div>

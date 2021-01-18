@@ -1,4 +1,4 @@
-.noty_layout_mixin,
+@import url(https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap);@import url(https://fonts.googleapis.com/css2?family=Palanquin&display=swap);.noty_layout_mixin,
 #noty_layout__centerRight,
 #noty_layout__centerLeft,
 #noty_layout__center,
@@ -304,7 +304,178 @@
 }
 
 body {
-  background: #fff;
+  background: #FFF9EF;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Palanquin Dark", sans-serif;
+}
+
+h2 {
+  font-family: "Palanquin", sans-serif;
+}
+
+h3 {
+  font-family: "Palanquin Dark", sans-serif;
+}
+
+a {
+  color: #FF7314;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #FEE8C6;
+}
+
+button:hover {
+  border: none;
+  color: #FF7314;
+}
+
+.navstyle {
+  background-color: #FFAD00;
+  font-family: "Palanquin Dark", sans-serif;
+  color: #FFF;
+  min-width: 500px;
+}
+
+.bgImg {
+  background-image: url("/uploads/foodbowl.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 10%;
+}
+
+.loginBg {
+  background-color: #FFAD00;
+  font-family: "Palanquin Dark", sans-serif;
+  margin: 0px auto 30px auto;
+  min-width: 250px;
+  max-width: 470px;
+  padding: 30px 5px 5px 5px;
+  /* loginBox */
+  mix-blend-mode: normal;
+  border-radius: 20px;
+  color: #FFF;
+}
+
+.loginForm {
+  font-family: "Palanquin", sans-serif;
+  width: 110%;
+  color: #FFF;
+  margin: 10%;
+}
+
+.btns {
+  font-family: "Palanquin Dark", sans-serif;
+  background: #FF7314;
+  border-radius: 20px;
+  text-align: center;
+  color: #FFF;
+  padding: 2% 4% 2% 4%;
+  margin: auto;
+}
+
+.inputGroup {
+  margin: 3%;
+}
+
+.inputBox {
+  color: #FFF;
+  border-radius: 5px;
+  border: none;
+  margin: 1%;
+  padding: 2%;
+  width: 70%;
+}
+
+.landingBg {
+  background-image: url("/uploads/foodbowl2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: initial;
+}
+
+.landing {
+  width: 100%;
+  height: 770px;
+}
+
+.landing h1 {
+  margin-top: 4%;
+  margin-bottom: 2%;
+  color: #FF7314;
+  font-size: 4rem;
+}
+
+.registerBox {
+  background-color: #FFAD00;
+  font-family: "Palanquin", sans-serif;
+  max-width: 1160px;
+  border-radius: 20px;
+  margin: 3% auto;
+  color: #FFF;
+  padding: 3%;
+}
+
+.cartBox {
+  font-family: "Palanquin Dark", sans-serif;
+  background-color: #FEE8C6;
+  padding: 2%;
+  border-radius: 20px;
+  color: #FF7314;
+}
+
+.itemBox {
+  background-color: #FFF;
+  font-family: "Palanquin", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  margin-top: 1%;
+  padding: 2%;
+}
+
+.placeOrderBtn {
+  background-color: #FFAD00;
+  color: #FFF;
+  font-family: "Palanquin Dark", sans-serif;
+  font-size: xx-large;
+  border: none;
+  margin-top: 1%;
+  margin-bottom: 3%;
+}
+
+.itemBoxOrange {
+  background-color: #FFAD00;
+  font-family: "Palanquin Dark", sans-serif;
+  border-radius: 20px;
+  margin-top: 1%;
+  padding: 3%;
+  text-align: center;
+}
+
+.bubble {
+  background-color: #FFAD00;
+  text-align: center;
+  font-family: "Palanquin Dark", sans-serif;
+  padding: 10px;
+  border-radius: 20px;
+  color: white;
+  max-width: 1160px;
+}
+
+.orderTableBg {
+  background-color: #FEE8C6;
+  font-family: "Palanquin Dark", sans-serif;
+  font-size: larger;
+  padding: 30px;
+  margin: auto;
+  color: #FF7314;
+  border-radius: 20px;
+  max-width: 1160px;
 }
 
 .step-completed {
@@ -313,5 +484,29 @@ body {
 
 .current {
   color: red;
+}
+
+ul.filters {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 30px 0;
+}
+
+ul.filters > li {
+  list-style: none;
+  display: inline-block;
+}
+
+ul.filters > li > a {
+  display: block;
+  color: #434e5e;
+  text-decoration: none;
+  padding: 5px 20px;
+}
+
+ul.filters > li.active > a {
+  color: #fff;
+  background: #FFAD00;
 }
 

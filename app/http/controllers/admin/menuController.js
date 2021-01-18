@@ -9,18 +9,21 @@ function menuController() {
             const name = req.body.name
             const price = req.body.price
             const itemImage = req.file.filename
+            const category = req.body.category
 
             if(!name || !price || !itemImage) {
                 req.flash('error','All fields are required');
                 req.flash('name',name)
                 req.flash('price',price)
+                req.flash('category',category)
                 return res.redirect('/admin/menu');
             }
 
             const newItem = await new Menu({
                 name,
                 price,
-                itemImage
+                itemImage,
+                category
             })
 
             newItem.save().then((newItem) => {

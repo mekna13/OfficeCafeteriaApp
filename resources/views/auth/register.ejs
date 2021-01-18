@@ -1,46 +1,62 @@
-<form action="/register" method="POST" class="mt-8 space-y-6" enctype="multipart/form-data">
-  <% if(messages.error) { %>
-  <span><%= messages.error %>></span>
-  <% } %>
-    <div class="rounded-md shadow-sm -space-y-px">
-    <div>
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name"  placeholder="Name" value="<%= messages.name %> ">
-    </div>
-    <div>
-        <label for="lastname">Last Name</label>
-        <input type="text" name="lastname" id="lastname"  placeholder="lastname" value="<%= messages.lastname %>">
-    </div>
-    <div>
-        <label for="orgName">Organization Name</label>
-        <input type="text" name="orgName" id="orgName"  placeholder="orgName" value="<%= messages.orgName %> ">
-    </div>
-    <div>
-        <label for="empId">Employee Id</label>
-        <input type="text" name="empId" id="empId"  placeholder="empId" value="<%= messages.empId %> ">
-    </div>
-    <div>
-      <label for="mobileNo">Mobile No</label>
-      <input type="text" name="mobileNo" id="mobileNo"  placeholder="mobileNo" value="<%= messages.name %> ">
-    </div>
-    <div>
-      <label for="file">Upload ID Card Image ( only png or jpeg )</label>
-      <input type="file" id="imgId" name="file" value="" required>
-    </div>
+<div class="landingBg">
 
-    <div>
-      <label for="email">Email</label>
-      <input type="text" name="email" id="email"  placeholder="email" value="<%= messages.email %> ">
-    </div>
-    <div >
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password"  placeholder="Password">
-    </div>
+  <div class="landing">
+    <h1>Get Delicious Meals Delivered<br>At Your Office</h1>
+    <a href="#form" style="text-align: center;"><h3>Register Now!</h3></a>
+  </div>
 
+</div> 
 
-    <div>
-      <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-        Sign Up
-      </button>
-    </div>
-  </form>
+  <div class="registerBox" id="form" >
+    <h1>Register</h1><br>
+    <form action="/register" method="POST" class="myForm" enctype="multipart/form-data">
+      <% if(messages.error) { %>
+      <span><%= messages.error %>></span>
+      <% } %>
+        <div class="row g-3 mb-3"> 
+          <div class="form-group col-md">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" name="name" id="name" class="form-control"  placeholder="Name" value="<%= messages.name %> ">
+          </div>
+          <div class="col-md">
+              <label for="lastname"  class="form-label">Last Name</label>
+              <input type="text" name="lastname" id="lastname"  class="form-control" placeholder="lastname" value="<%= messages.lastname %>">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md">
+              <label for="orgName"  class="form-label">Organization Name</label>
+              <input type="text" name="orgName" id="orgName" class="form-control"  placeholder="orgName" value="<%= messages.orgName %> ">
+          </div>
+          <div class="col-md">
+              <label for="empId"  class="form-label">Employee Id</label>
+              <input type="text" name="empId" id="empId" class="form-control" placeholder="empId" value="<%= messages.empId %> ">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="mobileNo"  class="form-label">Mobile No</label>
+          <input type="text" name="mobileNo" id="mobileNo" class="form-control" placeholder="mobileNo" value="<%= messages.name %> ">
+        </div>
+        <div class="mb-4">
+          <label for="file"  class="form-label">Upload ID Card Image ( only png or jpeg )</label>
+          <input type="file" id="imgId" name="file" value="" class="form-control" required>
+        </div>
+        
+        <hr>
+        <div class="mb-3">
+          <label for="email"  class="form-label">Email</label>
+          <input type="text" name="email" id="email" class="form-control" placeholder="email" value="<%= messages.email %> ">
+        </div>
+        <div class="mb-3">
+          <label for="password"  class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" id="password"  placeholder="Password">
+        </div>
+    
+    
+        <div style="margin-left:45%; margin-bottom: 3%; margin-top: 3%;">
+          <button type="submit" class="btn btns">
+            Sign Up
+          </button>
+        </div>
+      </form>
+  </div>
