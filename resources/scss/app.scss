@@ -31,16 +31,57 @@ button:hover{
     border: none;
     color: $textColor;
 }
-
+ul{
+    list-style: none;
+}
 
 //NavBar Styles
 .navstyle{
+    display: flex;
+    justify-content: space-between;
     background-color: $primary;
     font-family: $heading-font;
     color: $color-3;
     min-width: 500px;
 }
+.hamburger{
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: $color-3;
+    cursor: pointer;
+    font-size: 20px;
+}
 
+.hamburger:focus{
+    outline: none;
+}
+.navItems{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+}
+.nav-ul{
+    display:flex;
+}
+@media screen and (max-width: 992px) {
+    .nav-ul{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+    }
+    .nav-ul.show{
+        display: flex;
+    }
+    .hamburger{
+        display: block;
+    }
+  }
+.cart{
+    color: white;
+    font-size: 30px;
+}
 //loginForm Styltes
 .bgImg{
     background-image: url('/uploads/foodbowl.png');
@@ -54,7 +95,7 @@ button:hover{
     background-color: $primary;
     font-family: $heading-font;
     margin: 0px auto 30px auto;
-    min-width: 250px;
+    min-width: 320px;
     max-width: 470px;
 
     padding: 30px 5px 5px 5px;
@@ -86,7 +127,7 @@ button:hover{
     margin: 3%;
 }
 .inputBox{
-    color: $color-3;
+    background-color: $color-3;
     border-radius: 5px;
     border: none;
     margin: 1%;   
@@ -94,6 +135,31 @@ button:hover{
     width: 70%;
 }
 
+@media screen and (max-width: 426px){
+    .bgImg{
+        background-image: none;
+        width: 100%;
+        
+    }
+    .loginBg{
+        background-color: $bgColor;
+        padding: 30px 5px 5px 5px;
+        width: 100%;
+        mix-blend-mode: normal;
+        color: $textColor;
+        text-align: center;
+    
+    }
+    .loginForm{
+        font-family: $body-font;
+        color: $textColor;
+        text-align: start;
+    }
+    .inputBox{
+        width: 100%;
+    }
+    
+}
 //Register Form Styles
 .landingBg{
     background-image: url('/uploads/foodbowl2.png');
@@ -123,6 +189,33 @@ button:hover{
     color: $color-3;
     padding: 3%;
 }
+
+@media screen and (max-width: 768px){
+    .landingBg{
+        background-image: none;
+    }
+    .landing{
+        height: 100%;
+    }
+}
+@media screen and (max-width: 426px){
+    .landingBg{
+        background-image: none;
+        align-items: center;
+    }
+    .landing{
+        display: none;
+        height: 100%;
+    }
+    .registerBox{
+       background-color: $bgColor;
+       color: $textColor;
+       min-width: 425px;
+    }
+}
+
+
+
 
 //Cart Styles
 
@@ -182,25 +275,130 @@ button:hover{
     border-radius: 20px;
     max-width: 1160px;
 }
-//Profile Page
+//Admin Orders Page
+.ordersTable{
+    margin: 10px auto;
+    font-family: $body-font;
+    color: $textColor;
 
+}
+table, th, td , tr ,td{
+    border: 2px solid $bgColor;
+    text-align: center;
+    background-color: #fff;
+}
 
+//Admin Menu Edit Page
 
+.menuBg{
+    background-color: $secondary;
+    margin: 5% auto;
+    padding: 3%;
+    font-family: $body-font;
+    color: $textColor;
+    max-width: 600px;
+}
 
+select{
+    color: $textColor;
+    border: 2px solid $textColor;
+    margin: 2px;
+}
 
-
-
-
+.makeTheme{
+    color: $textColor;
+    border: 1px solid $textColor;
+}
 
 //Tracking Page or Single Order Page
 
+.delstatBg{
+    color: $textColor;
+    font-family: $body-font;
+    font-size: large;
+    padding-bottom: 10px;
+    margin: auto;
+}
+
+.delstatBg ul{
+    margin-left: 84px;
+}
+.delstatBg ul li span{
+    position: relative;
+}
+
+.delstatBg ul li span:after{
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 45%;
+    background-color: $textColor;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.delstatBg ul li span::before{
+    font-family: "Line Awesome Free";
+    font-size: 46px;
+    font-weight: 600;
+    position: absolute;
+    left: -90px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: inherit;
+}
+
+.delstatBg ul li:nth-child(1) span:before{
+    content: '\f46c';
+}
+
+.delstatBg ul li:nth-child(2) span:before{
+    content: '\f017';
+}
+
+.delstatBg ul li:nth-child(3) span:before{
+    content: '\f593';
+}
+
+.delstatBg ul li:nth-child(4) span:before{
+    content: '\f058';
+}
+.delstatBg ul li{
+    position: relative;
+    margin-bottom: 100px;
+}
+.delstatBg ul li:before{
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: -1px;
+    width: 3px;
+    height: 100%;
+    background: $textColor;
+    margin-top: 10px;
+}
+
+.delstatBg ul li:nth-child(4) span:after{
+    box-shadow: 0 23px 1px 22px $bgColor;
+}
 .step-completed{
-    color: gray;
+    color: $secondary;
 }
 
 .current{
-    color: red;
+    color: $textColor;
 }
+
+//line
+.delstatBg ul li.step-completed:before{
+    background: $secondary;
+}
+//dots
+.delstatBg ul li.step-completed span:after{
+    background: $secondary;
+}
+
 
 ul.filters{
     display: block;
@@ -226,3 +424,27 @@ ul.filters > li.active > a{
     color: #fff;
     background: $primary;
 }
+
+
+//Menu Page
+.card{
+    border: none;
+    color: $textColor;
+    font-family: $body-font;
+    font-size: larger;
+    margin-bottom: 5px;
+    border-radius: 20px;
+}
+
+.addButton{
+    background-color: $primary;
+    color: white;
+
+}
+.addButton:hover{
+    background-color: $textColor;
+    color: $secondary;
+    border: none;
+}
+
+

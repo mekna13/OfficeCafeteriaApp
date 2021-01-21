@@ -1,4 +1,6 @@
-@import url(https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap);@import url(https://fonts.googleapis.com/css2?family=Palanquin&display=swap);.noty_layout_mixin,
+@import url(https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap);@import url(https://fonts.googleapis.com/css2?family=Palanquin&display=swap);@charset "UTF-8";
+
+.noty_layout_mixin,
 #noty_layout__centerRight,
 #noty_layout__centerLeft,
 #noty_layout__center,
@@ -334,11 +336,62 @@ button:hover {
   color: #FF7314;
 }
 
+ul {
+  list-style: none;
+}
+
 .navstyle {
+  display: flex;
+  justify-content: space-between;
   background-color: #FFAD00;
   font-family: "Palanquin Dark", sans-serif;
   color: #FFF;
   min-width: 500px;
+}
+
+.hamburger {
+  display: none;
+  background-color: transparent;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.hamburger:focus {
+  outline: none;
+}
+
+.navItems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+
+.nav-ul {
+  display: flex;
+}
+
+@media screen and (max-width: 992px) {
+  .nav-ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-ul.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+.cart {
+  color: white;
+  font-size: 30px;
 }
 
 .bgImg {
@@ -353,7 +406,7 @@ button:hover {
   background-color: #FFAD00;
   font-family: "Palanquin Dark", sans-serif;
   margin: 0px auto 30px auto;
-  min-width: 250px;
+  min-width: 320px;
   max-width: 470px;
   padding: 30px 5px 5px 5px;
   /* loginBox */
@@ -384,12 +437,38 @@ button:hover {
 }
 
 .inputBox {
-  color: #FFF;
+  background-color: #FFF;
   border-radius: 5px;
   border: none;
   margin: 1%;
   padding: 2%;
   width: 70%;
+}
+
+@media screen and (max-width: 426px) {
+  .bgImg {
+    background-image: none;
+    width: 100%;
+  }
+
+  .loginBg {
+    background-color: #FFF9EF;
+    padding: 30px 5px 5px 5px;
+    width: 100%;
+    mix-blend-mode: normal;
+    color: #FF7314;
+    text-align: center;
+  }
+
+  .loginForm {
+    font-family: "Palanquin", sans-serif;
+    color: #FF7314;
+    text-align: start;
+  }
+
+  .inputBox {
+    width: 100%;
+  }
 }
 
 .landingBg {
@@ -419,6 +498,34 @@ button:hover {
   margin: 3% auto;
   color: #FFF;
   padding: 3%;
+}
+
+@media screen and (max-width: 768px) {
+  .landingBg {
+    background-image: none;
+  }
+
+  .landing {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .landingBg {
+    background-image: none;
+    align-items: center;
+  }
+
+  .landing {
+    display: none;
+    height: 100%;
+  }
+
+  .registerBox {
+    background-color: #FFF9EF;
+    color: #FF7314;
+    min-width: 425px;
+  }
 }
 
 .cartBox {
@@ -478,12 +585,130 @@ button:hover {
   max-width: 1160px;
 }
 
+.ordersTable {
+  margin: 10px auto;
+  font-family: "Palanquin", sans-serif;
+  color: #FF7314;
+}
+
+table,
+th,
+td,
+tr,
+td {
+  border: 2px solid #FFF9EF;
+  text-align: center;
+  background-color: #fff;
+}
+
+.menuBg {
+  background-color: #FEE8C6;
+  margin: 5% auto;
+  padding: 3%;
+  font-family: "Palanquin", sans-serif;
+  color: #FF7314;
+  max-width: 600px;
+}
+
+select {
+  color: #FF7314;
+  border: 2px solid #FF7314;
+  margin: 2px;
+}
+
+.makeTheme {
+  color: #FF7314;
+  border: 1px solid #FF7314;
+}
+
+.delstatBg {
+  color: #FF7314;
+  font-family: "Palanquin", sans-serif;
+  font-size: large;
+  padding-bottom: 10px;
+  margin: auto;
+}
+
+.delstatBg ul {
+  margin-left: 84px;
+}
+
+.delstatBg ul li span {
+  position: relative;
+}
+
+.delstatBg ul li span:after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 45%;
+  background-color: #FF7314;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.delstatBg ul li span::before {
+  font-family: "Line Awesome Free";
+  font-size: 46px;
+  font-weight: 600;
+  position: absolute;
+  left: -90px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: inherit;
+}
+
+.delstatBg ul li:nth-child(1) span:before {
+  content: "\F46C";
+}
+
+.delstatBg ul li:nth-child(2) span:before {
+  content: "\F017";
+}
+
+.delstatBg ul li:nth-child(3) span:before {
+  content: "\F593";
+}
+
+.delstatBg ul li:nth-child(4) span:before {
+  content: "\F058";
+}
+
+.delstatBg ul li {
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.delstatBg ul li:before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: -1px;
+  width: 3px;
+  height: 100%;
+  background: #FF7314;
+  margin-top: 10px;
+}
+
+.delstatBg ul li:nth-child(4) span:after {
+  box-shadow: 0 23px 1px 22px #FFF9EF;
+}
+
 .step-completed {
-  color: gray;
+  color: #FEE8C6;
 }
 
 .current {
-  color: red;
+  color: #FF7314;
+}
+
+.delstatBg ul li.step-completed:before {
+  background: #FEE8C6;
+}
+
+.delstatBg ul li.step-completed span:after {
+  background: #FEE8C6;
 }
 
 ul.filters {
@@ -508,5 +733,25 @@ ul.filters > li > a {
 ul.filters > li.active > a {
   color: #fff;
   background: #FFAD00;
+}
+
+.card {
+  border: none;
+  color: #FF7314;
+  font-family: "Palanquin", sans-serif;
+  font-size: larger;
+  margin-bottom: 5px;
+  border-radius: 20px;
+}
+
+.addButton {
+  background-color: #FFAD00;
+  color: white;
+}
+
+.addButton:hover {
+  background-color: #FF7314;
+  color: #FEE8C6;
+  border: none;
 }
 

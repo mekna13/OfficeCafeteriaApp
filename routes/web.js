@@ -29,6 +29,9 @@ function initRoutes(app) {
 
     app.get('/profile', authController().profile);
 
+    app.get('/profile/:id/edit', authController().profileEdit);
+    app.put('/profile/:id/edit',upload, authController().profileEditUpdate);
+    
     app.post('/logout', authController().logout)
 
     app.get('/customer/orders', auth, orderController().index)

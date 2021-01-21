@@ -1,6 +1,9 @@
 <% if(user){ %>
     <div class="orderTableBg mt-3">
         <h1>YOUR PROFILE</h1>
+        <div class="d-flex justify-content-end">
+            <h1><a href="/profile/<%= user._id %>/edit"><i class="las la-edit"></i></a></h1>
+        </div>
         <div class="itemBox">
             <div class="row">
                 <div class="col-md"><strong>Registration Id</strong></div>

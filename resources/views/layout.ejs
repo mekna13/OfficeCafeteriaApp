@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title></title>
         <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Palanquin&family=Palanquin+Dark&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -13,27 +14,47 @@
 
         <nav class="navbar navbar-expand-lg navbar-light navstyle">
             <div class="container-fluid ">
-              <a class="navbar-brand" href="/" style="color: white;">Cafeteria App</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
-                <ul class="navbar-nav" >
+              <a class="navbar-brand logo" href="/" style="color: white;">Cafeteria App</a>
+
+              <div class="navItems">
+                <button class="hamburger" id="hamburger">
+                  <i class="las la-bars"></i>
+                </button>
+                <ul class="navbar-nav nav-ul" id="nav-ul" >
+                  
                   <li class="nav-item justify-content-end">
                     <a href="/" class="nav-link active" aria-current="page" style="color: white;">Menu</a>
                   </li>
                   <% if(user) { %>
-                    <li class="nav-item justify-content-end">
-                      <a href="/customer/orders" class="nav-link active"  style="color: white;">Your Orders</a>
-                    </li>
-                    <li class="nav-item justify-content-end">
-                      <a href="/profile" class="nav-link active"  style="color: white;">Profile</a>
-                    </li>
-                  <li class="nav-item justify-content-end">
-                    <form id="logout" action="/logout" method="POST">
-                        <a onclick="document.getElementById('logout').submit()" href="#" style="color: white;" class="nav-link active">Logout</a>
-                    </form>
-                  </li>
+
+                    <% if(user.role == "admin") { %>
+                      <li class="nav-item justify-content-end">
+                        <a href="/admin/orders" class="nav-link active"  style="color: white;">Orders</a>
+                      </li>
+                      <li class="nav-item justify-content-end">
+                        <a href="/admin/menu" class="nav-link active"  style="color: white;">Edit Menu</a>
+                      </li>
+                      <li class="nav-item justify-content-end">
+                        <form id="logout" action="/logout" method="POST">
+                            <a onclick="document.getElementById('logout').submit()" href="#" style="color: white;" class="nav-link active">Logout</a>
+                        </form>
+                      </li>
+                    <% } else { %> 
+                      <li class="nav-item justify-content-end">
+                        <a href="/customer/orders" class="nav-link active"  style="color: white;">Your Orders</a>
+                      </li>
+                      <li class="nav-item justify-content-end">
+                        <a href="/profile" class="nav-link active"  style="color: white;">Profile</a>
+                      </li>
+                      <li class="nav-item justify-content-end">
+                      <form id="logout" action="/logout" method="POST">
+                          <a onclick="document.getElementById('logout').submit()" href="#" style="color: white;" class="nav-link active">Logout</a>
+                      </form>
+                      </li>
+                      <li class="justify-content-end">
+                        <a href="/cart" class="nav-link active"  style="color: white;"><i class="las la-shopping-cart cart"></i> <span id="cartCounter"><%= session.cart ? session.cart.totalQty : '' %></span></a>
+                      </li>
+                    <% } %> 
                   <% } else { %>
                   <li class="nav-item justify-content-end">
                     <a href="/register" class="nav-link active"  style="color: white;">Register</a>
@@ -41,10 +62,10 @@
                   <li class="nav-item justify-content-end">
                     <a href="/login" class="nav-link active"  style="color: white;">Login</a>
                   </li>
-                  <% } %>
                   <li class="justify-content-end">
-                    <a href="/cart" class="nav-link active"  style="color: white;">Cart <span id="cartCounter"><%= session.cart ? session.cart.totalQty : '' %></span></a>
-                </li>
+                    <a href="/cart" class="nav-link active"  style="color: white;"><i class="las la-shopping-cart cart"></i><span style="font-size: large;"id="cartCounter"><%= session.cart ? session.cart.totalQty : '' %></span></a>
+                  </li>
+                  <% } %>
                 </ul>
               </div>
             </div>

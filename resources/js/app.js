@@ -3,6 +3,16 @@ import Noty from 'noty'
 import { initAdmin }  from './admin'
 import moment from 'moment'
 
+
+//hamburger functions
+const hamburger = document.getElementById("hamburger");
+const navUL = document.getElementById('nav-ul');
+
+hamburger.addEventListener('click', () => {
+    navUL.classList.toggle('show');
+});
+
+//add to cart functions
 let addToCart = document.querySelectorAll('.add-to-cart')
 let cartCounter = document.querySelector('#cartCounter')
 function updateCart(item){

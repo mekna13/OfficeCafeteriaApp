@@ -101,6 +101,70 @@ function authController(){
          profile(req,res){
             res.render('auth/profile')
          },
+         profileEdit(req, res, next){
+            res.render('auth/editProfile');
+         },
+         async profileEditUpdate(req ,res ,next){
+            const id = req.params.id;
+
+            const name = req.body.name
+            const lastname = req.body.lastname
+            const orgName = req.body.orgName
+            const empId = req.body.empId
+            const mobileNo = req.body.mobileNo
+            const email = req.body.email
+            const idImg = req.file.filename
+            
+            
+            //Request Validation
+            if(!name || !email  || !lastname || !orgName || !empId || !mobileNo || !idImg){
+
+                req.flash('error','All fields are required');
+                req.flash('name',name)
+                req.flash('email',email)
+                req.flash('orgName',orgName)
+                req.flash('empId',empId)
+                req.flash('mobileNo',mobileNo)
+
+                return res.redirect('/profile/id/edit');
+            }
+            
+            //Checking if string entered for email is valid
+            function validateEmail(email) 
+            {
+                var re = /\S+@\S+\.\S+/;
+                return re.test(email);
+            }
+    
+            if(validateEmail(email)===false){
+                req.flash('error','Please enter valid email');
+                req.flash('name',name)
+                req.flash('orgName',orgName)
+                req.flash('empId',empId)
+                req.flash('mobileNo',mobileNo)
+
+                return res.redirect('/profile/id/edit');
+            }
+
+            const customer =  await User.findByIdAndUpdate(
+                id,
+                {
+                    name: name,
+                    lastname: lastname,
+                    orgName : orgName,
+                    empId : empId,
+                    mobileNo : mobileNo,
+                    email : email,
+                    idImg : idImg
+                    
+                }, function(err,model) {
+                    if(err){
+                     console.log(err);
+                     return res.send(err);
+                 }
+                 res.redirect('/profile');
+              });
+         },
         login(req,res){
             res.render('auth/login');
         },

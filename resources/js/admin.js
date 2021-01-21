@@ -32,7 +32,7 @@ export function initAdmin() {
         return orders.map(order => {
             return `
                 <tr>
-                <td class="border px-4 py-2 text-green-900">
+                <td class="border px-4 py-2" >
                     <p>${ order._id }</p>
                     <div>${ renderItems(order.items) }</div>
                 </td>
@@ -42,7 +42,7 @@ export function initAdmin() {
                     <div class="inline-block relative w-64">
                         <form action="/admin/order/status" method="POST">
                             <input type="hidden" name="orderId" value="${ order._id }">
-                            <input style="border: 1px solid black;" type="text" name="time" onchange="this.form.submit()" value="${ order.takeAwayTime }">
+                            <input style="border: 1px solid #FFAD00; margin: 2px; " type="text" name="time" onchange="this.form.submit()" value="${ order.takeAwayTime }">
                             <select name="status" onchange="this.form.submit()"
                                 class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                                 <option value="order_placed"

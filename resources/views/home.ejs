@@ -10,17 +10,16 @@
     <div class="row">
         <% items.forEach(function(item){ %>
         <div class="item <%= item.category %>">
-            <div class="card mb-3" style="max-width: 540px;">
+            <div class="card mb-3 col-md" style="max-width: 540px;">
                 <div class="row g-0">
                 <div class="col-md-4">
                     <img src="/img/<%= item.itemImage %>" alt="..." width="100%;">
                 </div>
                 <div class="col-md-8">
-                    <div class="card-body">
-                    <h5 class="card-title">Item Name: <%= item.name %></h5>
-                    <p class="card-text">Price: <%= item.price %></p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    <button data-item="<%= JSON.stringify(item) %>" class="add-to-cart btn btn-primary"><strong>Add</strong></button>
+                    <div class="card-body d-flex justify-content-between">
+                    <div> <h3 class="card-title"><%= item.name %></h3>
+                    <p class="card-text">Rs<%= item.price %></p></div>
+                    <button data-item="<%= JSON.stringify(item) %>" class=" btn addButton"><i class="las la-plus"></i></button>
                     </div>
                 </div>
                 </div>

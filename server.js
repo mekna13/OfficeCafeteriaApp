@@ -13,7 +13,10 @@ const flash = require('express-flash')
 const MongoDbStore = require('connect-mongo')(session)
 const passport = require('passport')
 const Emitter = require('events')
+const methodOverride = require('method-override');
 
+mongoose.set('useFindAndModify', false);
+app.use(methodOverride('_method'))
 app.use(express.static(__dirname+'/public/'))
 //DB Connection
 const url = 'mongodb+srv://Panda:Ab541112@@cluster0.xketn.mongodb.net/cafe?retryWrites=true&w=majority'
