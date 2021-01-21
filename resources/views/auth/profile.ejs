@@ -1,0 +1,56 @@
+<% if(user){ %>
+    <div class="orderTableBg mt-3">
+        <h1>YOUR PROFILE</h1>
+        <div class="d-flex justify-content-end">
+            <h1><a href="/profile/<%= user._id %>/edit"><i class="las la-edit"></i></a></h1>
+        </div>
+        <div class="itemBox">
+            <div class="row">
+                <div class="col-md"><strong>Registration Id</strong></div>
+                <div class="col-md"><%= user._id %></div>
+            </div>
+        </div>
+        <div class="itemBox">
+            <div class="row">
+                <div class="col-md"><strong>Full Name</strong></div>
+                <div class="col-md"><%= user.name %> <%= user.lastname %></div>
+            </div>
+        </div>
+        <div class="itemBox">
+            <div class="row">
+                <div class="col-md"><strong>Organization</strong></div>
+                <div class="col"><%= user.orgName %></div>
+            </div>
+        </div>
+        <div class="itemBox">
+            <div class="row">
+                <div class="col-md"><strong>Employee Id</strong></div>
+                <div class="col-md"><%= user.empId %></div>
+            </div>
+        </div>
+        <div class="itemBox">
+            <div class="row">
+                <div class="col-md"><strong>Mobile No</strong></div>
+                <div class="col-md"><%= user.mobileNo %></div>
+            </div>
+        </div>
+        <div class="itemBox">
+            <div class="row">
+                <div class="col-md"><Strong>Email Id</Strong></div>
+                <div class="col-md"><%= user.email %></div>
+            </div>
+        </div>
+        <div class="itemBox">
+            <div class="row">
+                <div class="col-md">
+                    <h3>Id Image:</h3>
+                </div>
+                <div class="col-md"style="width: 200px; height: 200px;">
+                    <img src="/uploads/<%= user.idImg %> " alt="<%= user.idImg %>">
+                </div>
+            </div>
+        </div>
+    </div>
+<% }else { %> 
+    <h1>Login please</h1>
+<% } %> 

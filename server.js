@@ -11,7 +11,17 @@ const session = require('express-session')
 
 const flash = require('express-flash')
 const MongoDbStore = require('connect-mongo')(session)
+<<<<<<< Updated upstream
 
+=======
+const passport = require('passport')
+const Emitter = require('events')
+const methodOverride = require('method-override');
+
+mongoose.set('useFindAndModify', false);
+app.use(methodOverride('_method'))
+app.use(express.static(__dirname+'/public/'))
+>>>>>>> Stashed changes
 //DB Connection
 const url = 'mongodb+srv://Panda:Ab541112@@cluster0.xketn.mongodb.net/cafe?retryWrites=true&w=majority'
 mongoose.connect(url, { useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true });

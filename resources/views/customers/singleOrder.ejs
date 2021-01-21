@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-center mt-4">
+ 
+    <div class="delstatBg">
+        <h1 style="color: #FF7314;">Delivery Status</h1>
+    	<input id="hiddenInput" type="hidden" value="<%= JSON.stringify(order) %>">
+       
+        <h3 class="time_status m-4 p-3" data-time="To be set soon.."></h3>
+    	<ul>
+    	    <li class="status_timeline m-4 p-3" data-status="order_placed"><span>Order Placed</span></li>
+    	    <li class="status_timeline m-4 p-3" data-status="confirmed"><span>Waiting for Confirmation</span></li>
+    	    <li class="status_timeline m-4 p-3" data-status="prepared"><span>Preparing</span></li>
+    	    <li class="status_timeline m-4 mb-0 p-3 pb-0" data-status="completed"><span>Ready To Be Taken</span></li>
+    	</ul>
+    </div>
+</div>

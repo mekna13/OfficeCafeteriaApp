@@ -1,0 +1,72 @@
+<div class="menuBg">
+<<<<<<< HEAD
+    <h3 style="text-align: center;">Add Items to Menu</h3>
+    <form action="/admin/menu" method="POST" class="mt-8 space-y-6" enctype="multipart/form-data">
+        <% if(messages.error) { %>
+        <span><%= messages.error %>></span>
+        <% } %>
+          <div>
+          <div class="inputGroup">
+              <label for="name" class="form-label">Name</label>
+              <input class="inputBox" type="text" name="name" id="name"  placeholder="Name" value="<%= messages.name %> " required>
+          </div>
+          <div class="inputGroup">
+              <label for="price" class="form-label">Price</label>
+              <input class="inputBox" type="text" name="price" id="price"  placeholder="price" value="<%= messages.price %>" required>
+          </div>
+          <div class="inputGroup">
+            <label for="file" class="form-label" >Upload Item Image</label>
+            <input class="form-control" type="file" id="itemImageId" name="file" class="form-control" required>
+          </div>
+          <div class="inputGroup">
+            <label for="category" class="form-label">Choose Food Category</label>
+            <select name="category">
+                <option value="Main">Main Courses</option>
+                <option value="Sides">Sides</option>
+                <option value="Beverages">Beverages</option>
+            </select>
+          </div>   
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btns">
+              Add Item To Menu
+            </button>
+          </div>
+        </form>
+  </div>
+=======
+  <h3 style="text-align: center;">Add Items to Menu</h3>
+  <form action="/admin/menu" method="POST" class="mt-8 space-y-6" enctype="multipart/form-data">
+      <% if(messages.error) { %>
+      <span><%= messages.error %>></span>
+      <% } %>
+        <div>
+        <div class="inputGroup">
+            <label for="name" class="form-label">Name</label>
+            <input class="inputBox" type="text" name="name" id="name"  placeholder="Name" value="<%= messages.name %> " required>
+        </div>
+        <div class="inputGroup">
+            <label for="price" class="form-label">Price</label>
+            <input class="inputBox" type="text" name="price" id="price"  placeholder="price" value="<%= messages.price %>" required>
+        </div>
+        <div class="inputGroup">
+          <label for="file" class="form-label" >Upload Item Image</label>
+          <input class="form-control" type="file" id="itemImageId" name="file" class="form-control" required>
+        </div>
+        <div class="inputGroup">
+          <label for="category" class="form-label">Choose Food Category</label>
+          <select name="category">
+              <option value="Main">Main Courses</option>
+              <option value="Sides">Sides</option>
+              <option value="Beverages">Beverages</option>
+          </select>
+        </div>   
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btns">
+            Add Item To Menu
+          </button>
+        </div>
+      </form>
+</div>
+
+    
+>>>>>>> b02bbb6ed5ce26d5c477c1ad0e25021a1073c014

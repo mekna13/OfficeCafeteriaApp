@@ -1,0 +1,53 @@
+<<<<<<< HEAD
+<div class="registerBox" id="form" >
+=======
+
+  <div class="registerBox" id="form" >
+>>>>>>> b02bbb6ed5ce26d5c477c1ad0e25021a1073c014
+    <h1>Register</h1><br>
+    <form action="/profile/<%= user._id %>/edit?_method=PUT" method="POST" class="myForm" enctype="multipart/form-data">
+      <% if(messages.error) { %>
+      <span><%= messages.error %>></span>
+      <% } %>
+        <div class="row g-3 mb-3"> 
+          <div class="form-group col-md">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" name="name" id="name" class="form-control"  placeholder="Name" value="<%= user.name %> ">
+          </div>
+          <div class="col-md">
+              <label for="lastname"  class="form-label">Last Name</label>
+              <input type="text" name="lastname" id="lastname"  class="form-control" placeholder="lastname" value="<%= user.lastname %>">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md">
+              <label for="orgName"  class="form-label">Organization Name</label>
+              <input type="text" name="orgName" id="orgName" class="form-control"  placeholder="orgName" value="<%= user.orgName %> ">
+          </div>
+          <div class="col-md">
+              <label for="empId"  class="form-label">Employee Id</label>
+              <input type="text" name="empId" id="empId" class="form-control" placeholder="empId" value="<%= user.empId %> ">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="mobileNo"  class="form-label">Mobile No</label>
+          <input type="text" name="mobileNo" id="mobileNo" class="form-control" placeholder="mobileNo" value="<%= user.name %> ">
+        </div>
+        <div class="mb-4">
+          <label for="file"  class="form-label">Upload ID Card Image ( only png or jpeg , under 1024 x 1024 px)</label>
+          <input type="file" id="imgId" name="file" value="<%= user.idImg %> " class="form-control" required>
+        </div>
+        
+        <hr>
+        <div class="mb-3">
+          <label for="email"  class="form-label">Email</label>
+          <input type="text" name="email" id="email" class="form-control" placeholder="email" value="<%= user.email %> ">
+        </div>
+    
+        <div style="margin-left:45%; margin-bottom: 3%; margin-top: 3%;">
+          <button type="submit" class="btn btns">
+            Save Edits
+          </button>
+        </div>
+      </form>
+  </div>
