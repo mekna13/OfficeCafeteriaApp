@@ -3,18 +3,24 @@
 @import '~noty/src/themes/mint.scss';
 
 body{
-<<<<<<< Updated upstream
 
+    background: rgb(238, 215, 151);
+    // background: rgb(232,177,110);
+    // background: linear-gradient(90deg, rgba(232,177,110,0.989233193277311) 0%, rgba(236,229,219,1) 41%, rgba(219,170,77,1) 100%);
+    
+footer{
     background: $primary;
-
+    color: black;
 }
-
-=======
-    background: $bgColor;
+    
 }
 h1{
     text-align: center;
     font-family: $heading-font;
+}
+.heading{
+    padding-top: 30px;
+    color: $primary;
 }
 
 h2{
@@ -24,6 +30,7 @@ h2{
 h3{
     font-family: $heading-font;
 }
+
 
 a{
     color: $textColor;
@@ -287,7 +294,6 @@ ul{
     margin: 10px auto;
     font-family: $body-font;
     color: $textColor;
-<<<<<<< HEAD
 
 }
 table, th, td , tr ,td{
@@ -387,107 +393,6 @@ select{
     margin-top: 10px;
 }
 
-=======
-
-}
-table, th, td , tr ,td{
-    border: 2px solid $bgColor;
-    text-align: center;
-    background-color: #fff;
-}
-
-//Admin Menu Edit Page
-
-.menuBg{
-    background-color: $secondary;
-    margin: 5% auto;
-    padding: 3%;
-    font-family: $body-font;
-    color: $textColor;
-    max-width: 600px;
-}
-
-select{
-    color: $textColor;
-    border: 2px solid $textColor;
-    margin: 2px;
-}
-
-.makeTheme{
-    color: $textColor;
-    border: 1px solid $textColor;
-}
-
-//Tracking Page or Single Order Page
-
-.delstatBg{
-    color: $textColor;
-    font-family: $body-font;
-    font-size: large;
-    padding-bottom: 10px;
-    margin: auto;
-}
-
-.delstatBg ul{
-    margin-left: 84px;
-}
-.delstatBg ul li span{
-    position: relative;
-}
-
-.delstatBg ul li span:after{
-    content: '';
-    position: absolute;
-    left: -20px;
-    top: 45%;
-    background-color: $textColor;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-}
-
-.delstatBg ul li span::before{
-    font-family: "Line Awesome Free";
-    font-size: 46px;
-    font-weight: 600;
-    position: absolute;
-    left: -90px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: inherit;
-}
-
-.delstatBg ul li:nth-child(1) span:before{
-    content: '\f46c';
-}
-
-.delstatBg ul li:nth-child(2) span:before{
-    content: '\f017';
-}
-
-.delstatBg ul li:nth-child(3) span:before{
-    content: '\f593';
-}
-
-.delstatBg ul li:nth-child(4) span:before{
-    content: '\f058';
-}
-.delstatBg ul li{
-    position: relative;
-    margin-bottom: 100px;
-}
-.delstatBg ul li:before{
-    content: '';
-    position: absolute;
-    top: 30px;
-    left: -1px;
-    width: 3px;
-    height: 100%;
-    background: $textColor;
-    margin-top: 10px;
-}
-
->>>>>>> b02bbb6ed5ce26d5c477c1ad0e25021a1073c014
 .delstatBg ul li:nth-child(4) span:after{
     box-shadow: 0 23px 1px 22px $bgColor;
 }
@@ -512,6 +417,8 @@ select{
 ul.filters{
     display: block;
     width: 100%;
+    font-weight: bold;
+    font-size: x-large;
     margin: 0;
     padding: 30px 0;
 }
@@ -541,6 +448,7 @@ ul.filters > li.active > a{
     color: $textColor;
     font-family: $body-font;
     font-size: larger;
+    font-weight: bold;
     margin-bottom: 5px;
     border-radius: 20px;
 }
@@ -556,7 +464,6 @@ ul.filters > li.active > a{
     border: none;
 }
 
-<<<<<<< HEAD
 .StripeElement {
     box-sizing: border-box;
   
@@ -586,8 +493,6 @@ ul.filters > li.active > a{
   }
 
 
- 
-=======
-
->>>>>>> b02bbb6ed5ce26d5c477c1ad0e25021a1073c014
->>>>>>> Stashed changes
+  .la-facebook:hover{
+    color: whitesmoke;
+  }
