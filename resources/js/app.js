@@ -2,6 +2,7 @@ import axios from 'axios'
 import Noty from 'noty'
 import { initAdmin }  from './admin'
 import moment from 'moment'
+import { initStripe }  from './stripe'
 
 
 //hamburger functions
@@ -12,6 +13,7 @@ hamburger.addEventListener('click', () => {
     navUL.classList.toggle('show');
 });
 
+//add to cart
 //add to cart functions
 let addToCart = document.querySelectorAll('.add-to-cart')
 let cartCounter = document.querySelector('#cartCounter')
@@ -21,12 +23,16 @@ function updateCart(item){
         cartCounter.innerText  = res.data.totalQty;
         new Noty({
             text : 'Added to Cart',
-            timeout: 1000
+            timeout: 1000,
+            type: 'success',
+            progressBar: false
         }).show();
     }).catch(err => {
         new Noty({
             text : 'Something Went Wrong',
-            timeout: 1000
+            timeout: 1000,
+            type: 'error',
+            progressBar: false
         }).show();
     })
 }
@@ -37,7 +43,9 @@ addToCart.forEach((btn) => {
         let item = JSON.parse(btn.dataset.item);
         updateCart(item);
     });
+
 });
+
 
 //Remove alert message after sometime
 
@@ -49,8 +57,6 @@ if(alerMsg) {
     }, 2000)
 }
 
-//Socket
-let socket = io()
 
 initAdmin()
 
@@ -92,8 +98,11 @@ function updateStatus(order) {
 
 updateStatus(order)
 
-// //Socket
-// let socket = io()
+initStripe()
+
+
+//Socket
+let socket = io()
 
 //Join
 if(order){
@@ -115,7 +124,8 @@ socket.on('orderUpdated', (data) =>{
     updateStatus(updatedOrder)
     new Noty({
         text : 'New Update on your order',
-        timeout: 1000
+        timeout: 1000,
+        type: 'success',
+        progressBar: false
     }).show();
 })
-

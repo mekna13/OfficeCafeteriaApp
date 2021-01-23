@@ -63,6 +63,9 @@ export function initAdmin() {
                 <td class="border px-4 py-2">
                     ${ moment(order.createdAt).format('hh:mm A') }
                 </td>
+                <td class="border px-4 py-2">
+                    ${ order.paymentStatus ? 'paid' : 'Unpaid' }
+                </td>
             </tr>
         `
         }).join('')

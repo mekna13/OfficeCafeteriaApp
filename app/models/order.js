@@ -17,6 +17,10 @@ const orderSchema = new Schema({
         required: true,
         default: 'COD'
     },
+    paymentStatus: {
+        type: Boolean,
+        default: false
+    },
     status: {
         type: String,
         default: 'order_placed'

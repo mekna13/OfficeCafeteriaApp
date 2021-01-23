@@ -22,5 +22,4 @@
         $projects.isotope({filter: filter});
 
     });
-
 })(jQuery);

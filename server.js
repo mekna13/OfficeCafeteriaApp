@@ -19,17 +19,14 @@ mongoose.set('useFindAndModify', false);
 app.use(methodOverride('_method'))
 app.use(express.static(__dirname+'/public/'))
 //DB Connection
-const url = 'mongodb+srv://Panda:Ab541112@@cluster0.xketn.mongodb.net/cafe?retryWrites=true&w=majority'
-mongoose.connect(url, { useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true });
+
+mongoose.connect(process.env.MONGO_CONNECTION_URL, { useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true });
 const connection = mongoose.connection;
 connection.once('open', () => {
     console.log('DB Connected');
 }).catch(err => {
     console.log('Connection Failed');
 });
-
-
-
 
 
 //Session Store
@@ -77,9 +74,11 @@ app.use(expressLayout)
 app.set('views', path.join(__dirname, '/resources/views'))
 app.set('view engine', 'ejs')
 
-
+//setting the routes to another file
 require('./routes/web')(app)
-
+app.use((req,res) => {
+    res.status(404).send('<h1>404 page not found</h1>');
+})
 
 const PORT = process.env.PORT || 3300 
 const server = app.listen(PORT, () => {
