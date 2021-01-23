@@ -32,17 +32,17 @@ function orderController () {
                                 const eventEmitter = req.app.get('eventEmitter')
                                 eventEmitter.emit('orderPlaced', ord)
                                 delete req.session.cart   
-                                return res.json({message: 'Payment Successful. Order placed successfully'})
+                                return res.render('/customer/orders');
                             }).catch(err =>{
                                 console.log(err)
                             })
                         }).catch(err =>{
                             delete req.session.cart   
-                            return res.json({message: 'Order Placed but Payment Failed. You can pay at delivery.'})
+                            return res.json('/customer/orders');
                         })
                     }else{
                         delete req.session.cart 
-                        return res.json({message: 'Order placed successfully'})
+                        return res.json('/customer/orders');
                     }
                     
                     // return res.redirect('/customer/orders')

@@ -76,9 +76,6 @@ app.set('view engine', 'ejs')
 
 //setting the routes to another file
 require('./routes/web')(app)
-app.use((req,res) => {
-    res.status(404).send('<h1>404 page not found</h1>');
-})
 
 const PORT = process.env.PORT || 3300 
 const server = app.listen(PORT, () => {
