@@ -1,6 +1,6 @@
 
   <div class="registerBox" id="form" >
-    <h1>Register</h1><br>
+    <h1>Edit Profile</h1><br>
     <form action="/profile/<%= user._id %>/edit?_method=PUT" method="POST" class="myForm" enctype="multipart/form-data">
       <% if(messages.error) { %>
       <span><%= messages.error %>></span>
