@@ -439,7 +439,6 @@ ul.filters > li.active > a{
     background: $primary;
 }
 
-
 //Menu Page
 
 .intro{
@@ -451,6 +450,7 @@ ul.filters > li.active > a{
     justify-content: center;
     flex-direction: column;
     align-items: flex-start;
+    min-width: 500px;
 }
 
 .landingTitle{
@@ -538,6 +538,7 @@ ul.filters > li.active > a{
     padding: 40px;
     color: $textColor;
     font-family: $body-font;
+    min-width: 500px;
   }
 
 @media screen and(max-width: 426px){

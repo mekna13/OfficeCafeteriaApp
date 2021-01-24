@@ -32,17 +32,17 @@ function orderController () {
                                 const eventEmitter = req.app.get('eventEmitter')
                                 eventEmitter.emit('orderPlaced', ord)
                                 delete req.session.cart   
-                                return res.render('/customer/orders');
+                                return res.redirect('/customer/orders.');
                             }).catch(err =>{
                                 console.log(err)
                             })
                         }).catch(err =>{
                             delete req.session.cart   
-                            return res.json('/customer/orders');
+                            return res.redirect('/customer/orders')
                         })
                     }else{
                         delete req.session.cart 
-                        return res.json('/customer/orders');
+                        return res.redirect('/customer/orders');
                     }
                     
                     // return res.redirect('/customer/orders')

@@ -757,6 +757,7 @@ ul.filters > li.active > a {
   justify-content: center;
   flex-direction: column;
   align-items: flex-start;
+  min-width: 500px;
 }
 
 .landingTitle {
@@ -836,6 +837,7 @@ footer {
   padding: 40px;
   color: #FF7314;
   font-family: "Palanquin", sans-serif;
+  min-width: 500px;
 }
 
 @media screen and (max-width: 426px) {
